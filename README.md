@@ -1,2 +1,2 @@
 # WeatherOutfitPlanner
-Hello Just a Test Text
+Hello Just a Test
