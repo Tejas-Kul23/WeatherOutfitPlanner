@@ -1,6 +1,8 @@
 #Import Required Libraries
+from tkinter import *
 import tkinter as tk
-from tkinter import ttk
+from tkinter import StringVar, ttk
+import hashlib
 
 #Define Base Class - for Other Frames and Class
 class App(tk.Tk):
@@ -37,7 +39,7 @@ class RegisterUser(tk.Frame):
     tk.Frame.__init__(self, parent)
     self.controller = controller
 
-    root.title("Register User")
+    self.controller.title("Register User")
 
     global user_var
     user_var = tk.StringVar()
