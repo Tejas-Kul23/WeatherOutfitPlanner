@@ -52,7 +52,7 @@ class App(tk.Tk):
             frame.grid(row=0, column=0, sticky="nsew")
 
 
-    def show_frame(self, page_name):
+    def show_frame(self, page_name: str) -> None:
         '''
         Raises specified frame, making it visible to the user
 
@@ -86,7 +86,7 @@ class RegisterUser(tk.Frame):
         Saves password hash in a text file        
     '''
 
-    def __init__(self, parent,controller):
+    def __init__(self, parent,controller) -> None:
         tk.Frame.__init__(self, parent)
         self.controller = controller
 
@@ -128,7 +128,7 @@ class RegisterUser(tk.Frame):
         self.register_btn.grid(row=7, column=0, padx=10)
 
 
-    def register(self):
+    def register(self) -> None:
         '''
         Presence checks each entry box
         Checks whether the password is confirmed and matches
@@ -170,35 +170,35 @@ class RegisterUser(tk.Frame):
 
 
 class LoginUser(tk.Frame):
-    def __init__(self, parent,controller):
+    def __init__(self, parent,controller) -> None:
         tk.Frame.__init__(self, parent)
         self.controller = controller
 class Homepage(tk.Frame):
-    def __init__(self, parent,controller):
+    def __init__(self, parent,controller) -> None:
         tk.Frame.__init__(self, parent)
         self.controller = controller
 class AddClothes(tk.Frame):
-    def __init__(self, parent,controller):
+    def __init__(self, parent,controller) -> None:
         tk.Frame.__init__(self, parent)
         self.controller = controller
 class EditClothes(tk.Frame):
-    def __init__(self, parent,controller):
+    def __init__(self, parent,controller) -> None:
         tk.Frame.__init__(self, parent)
         self.controller = controller
 class EditListClothes(tk.Frame):
-    def __init__(self, parent,controller):
+    def __init__(self, parent,controller) -> None:
         tk.Frame.__init__(self, parent)
         self.controller = controller
 class EditClothesPages(tk.Frame):
-    def __init__(self, parent,controller):
+    def __init__(self, parent,controller) -> None:
         tk.Frame.__init__(self, parent)
         self.controller = controller
 class DeleteClothes(tk.Frame):
-    def __init__(self, parent,controller):
+    def __init__(self, parent,controller) -> None:
         tk.Frame.__init__(self, parent)
         self.controller = controller
 class DeleteListClothes(tk.Frame):
-    def __init__(self, parent,controller):
+    def __init__(self, parent,controller) -> None:
         tk.Frame.__init__(self, parent)
         self.controller = controller
     
