@@ -1,4 +1,8 @@
 #Import Required Libraries
+'''
+Application that provides suggestions on what clothes to wear depending on the weather
+WIP
+'''
 import tkinter as tk
 from tkinter import ttk, W
 import hashlib
@@ -40,7 +44,8 @@ class App(tk.Tk):
         # and the values being the instances of frame classes themselves
         self.frames = {}
 
-        for F in (RegisterUser, LoginUser, Homepage, AddClothes, EditClothes, EditListClothes, EditClothesPages, DeleteClothes, DeleteListClothes):
+        for F in (RegisterUser, LoginUser, Homepage, AddClothes, EditClothes, EditListClothes,
+                  EditClothesPages, DeleteClothes, DeleteListClothes):
             page_name = F.__name__
             frame = F(parent=container, controller=self)
             self.frames[page_name] = frame
@@ -138,7 +143,7 @@ class RegisterUser(tk.Frame):
         #Presence Check
         if username != "" and password != "" and confirm_password != "":
             #Check whether the Password is re-entered correctly
-            if self.conf_pwd_var.get() == self.pwd_var.get():
+            if password == confirm_password:
 
                 #Update register label text to confirm success
                 self.register_response.config(text="Registered!")
@@ -151,12 +156,14 @@ class RegisterUser(tk.Frame):
                 #Consider using csv file if possible???
                 with open("password.txt", "w", encoding="utf-8") as f:
                     f.write(conf_pwd_hash)
+
+                confirm_password, password = ""
             else:
                 #Update register label text to inform a failed match
                 self.register_response.config(text="Confirmed Password does not match the Password")
 
-                self.pwd_var.set("")
-                self.conf_pwd_var.set("")
+            self.pwd_var.set("")
+            self.conf_pwd_var.set("")
         else:
             #Update register label text to inform a failed presence check
             self.register_response.config(text="Please do not leave any fields empty")
